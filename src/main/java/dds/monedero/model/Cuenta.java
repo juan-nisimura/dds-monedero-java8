@@ -45,12 +45,14 @@ public class Cuenta {
 	}
 	
 	public void chequearMaximoExtraccionDiario(double cuanto) {
-		double montoExtraidoHoy = getMontoExtraidoA(LocalDate.now());
-		double limite = 1000 - montoExtraidoHoy;
-		if (cuanto > limite) {
+		if (cuanto > limite()) {
 			throw new MaximoExtraccionDiarioException(
-					"No puede extraer mas de $ " + 1000 + " diarios, límite: " + limite);
+					"No puede extraer mas de $ " + 1000 + " diarios, límite: " + limite());
 		}
+	}
+	
+	public double limite() {
+		return 1000 - getMontoExtraidoA(LocalDate.now());
 	}
 
 	public void poner(double cuanto) {
