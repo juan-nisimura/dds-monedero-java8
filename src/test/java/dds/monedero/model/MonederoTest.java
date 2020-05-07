@@ -91,7 +91,7 @@ public class MonederoTest {
   
   @Test
   public void agregarMovimiento() {
-	  cuenta.agregarMovimiento(deposito.getFecha(),deposito.getMonto(),true);
+	  cuenta.agregarMovimiento(deposito);
 	  Assert.assertTrue(cuenta.getMovimientos().contains(deposito));
   }
 
