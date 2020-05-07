@@ -1,11 +1,11 @@
-1. Type Tests: Preguntarle al movimiento si es un depósito o una extracción y comportarse según el tipo. Se deberían utilizar objetos polimórficos.
-2. El formateo de una de las class Exception no es igual al resto.
-3. Message Chain en el método getMontoExtraidoA de la clase Cuenta. Es cierto que al trabajar con listas una parte de la cadena es inevitable, pero no se aprovecha la abstracción fueDepositado en la condición del filter.
-4. Long Parámeter List en agregarMovimiento: no se está aprovechando la clase Movimiento como data clamp.
-5. Los setters y getters están dispersos en el código.
-6. Long Method en poner y sacar (son muy largos): Se pueden abstraer los chequeos de excepciones.
-7. Las variables locales montoExtraidoHoy y limite se pueden reemplazar por un metodo que calcule directamente el limite (temporary field code smell)
-8. Misplaced Method: el método agregateA en la clase Movimiento debería moverse a la clase Cuenta. Al hacerlo, hay que refactorear calcularValor. También rompe el encapsulamiento al setearle el saldo.
-9. Hay un error de fomateo en un comentario con palabras que no se entienden
-10.No tiene sentido la variable montoExtraidoHoy en el método sacar. También se puede reemplazar la variable local limite por un método que lo calcule.
-11.El setter para movimientos rompe el encapsulamiento innecesariamente.
+1. Type Tests: Preguntar en movimiento si es un depósito o una extracción. Se deberían utilizar objetos polimórficos.
+2. El formateo de una de las excepciones no es igual al resto.
+3. Se repite código en el método getMontoExtraidoA de la clase Cuenta: La condición del filter se puede reemplazar por fueDepositado.
+4. Data Clump en agregarMovimiento: se puede pasar directamente una instancia de Movimiento.
+5. Long Method en poner y sacar. Se pueden abstraer los chequeos de excepciones.
+6. Temporary Field: las variables montoExtraidoHoy y limite se pueden reemplazar por un metodo que calcule directamente el limite.
+7. Misplaced Method: el método agregateA en la clase Movimiento debería moverse a la clase Cuenta. Al hacerlo, hay que refactorear calcularValor. También rompe el encapsulamiento al setearle el saldo.
+8. Hay un error de formateo en un comentario con palabras que no están bien escritas.
+9. El setter para movimientos rompe el encapsulamiento innecesariamente.
+
+
