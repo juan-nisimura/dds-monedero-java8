@@ -8,11 +8,3 @@
 8. Misplaced Method: el método agregateA en la clase Movimiento debería moverse a la clase Cuenta. Al hacerlo, hay que refactorear calcularValor. También rompe el encapsulamiento al setearle el saldo.
 9. Hay un error de fomateo en un comentario con palabras que no se entienden??
 10.No tiene sentido la variable montoExtraidoHoy en el método sacar. También se puede reemplazar la variable local limite por un método que lo calcule.
-
-
-
-
-Falta testear:
-
-getMontoExtraídoA
-agregarMovimiento
