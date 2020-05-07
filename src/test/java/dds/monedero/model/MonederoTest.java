@@ -21,8 +21,8 @@ public class MonederoTest {
   @Before
   public void init() {
     cuenta = new Cuenta();
-    extraccion = new Movimiento(LocalDate.now(),1000,false);
-    deposito = new Movimiento(LocalDate.now(),1000,true);
+    extraccion = new Extraccion(LocalDate.now(),1000);
+    deposito = new Deposito(LocalDate.now(),1000);
   }
 
   @Test

@@ -5,7 +5,14 @@
 5. Los setters y getters están dispersos en el código.
 6. Long Method en poner y sacar (son muy largos): Se pueden abstraer los chequeos de excepciones.
 7. Corrigiendo el code smell de Type Test, aparece el code smell "Middle Man Method" en fueDepositado y fueExtraído. Se podrían quitar.
-8. Misplaced Method: el método agregateA en la clase Movimiento debería moverse a la clase Cuenta. Al hacerlo, hay que refactorear calcularValor.
+8. Misplaced Method: el método agregateA en la clase Movimiento debería moverse a la clase Cuenta. Al hacerlo, hay que refactorear calcularValor. También rompe el encapsulamiento al setearle el saldo.
 9. Hay un error de fomateo en un comentario con palabras que no se entienden.
 10.No tiene sentido la variable montoExtraidoHoy en el método sacar. También se puede reemplazar la variable local limite por un método que lo calcule.
-11.
+11.Cambiar el tipo de monto a BigDecimal.
+
+
+
+Falta testear:
+
+getMontoExtraídoA
+agregarMovimiento
