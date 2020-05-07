@@ -33,20 +33,20 @@ public class Cuenta {
 			throw new MaximaCantidadDepositosException("Ya excedio los " + 3 + " depositos diarios");
 		}
 	}
-	
+
 	public void chequearSaldoMenor(double cuanto) {
 		if (getSaldo() - cuanto < 0) {
 			throw new SaldoMenorException("No puede sacar mas de " + getSaldo() + " $");
 		}
 	}
-	
+
 	public void chequearMaximoExtraccionDiario(double cuanto) {
 		if (cuanto > limite()) {
 			throw new MaximoExtraccionDiarioException(
 					"No puede extraer mas de $ " + 1000 + " diarios, límite: " + limite());
 		}
 	}
-	
+
 	public double limite() {
 		return 1000 - getMontoExtraidoA(LocalDate.now());
 	}

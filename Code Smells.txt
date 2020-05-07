@@ -6,5 +6,6 @@
 6. Long Method en poner y sacar (son muy largos): Se pueden abstraer los chequeos de excepciones.
 7. Las variables locales montoExtraidoHoy y limite se pueden reemplazar por un metodo que calcule directamente el limite (temporary field code smell)
 8. Misplaced Method: el método agregateA en la clase Movimiento debería moverse a la clase Cuenta. Al hacerlo, hay que refactorear calcularValor. También rompe el encapsulamiento al setearle el saldo.
-9. Hay un error de fomateo en un comentario con palabras que no se entienden??
+9. Hay un error de fomateo en un comentario con palabras que no se entienden
 10.No tiene sentido la variable montoExtraidoHoy en el método sacar. También se puede reemplazar la variable local limite por un método que lo calcule.
+11.El setter para movimientos rompe el encapsulamiento innecesariamente.
