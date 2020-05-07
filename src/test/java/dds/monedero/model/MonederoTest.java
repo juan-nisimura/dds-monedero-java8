@@ -14,6 +14,7 @@ import dds.monedero.exceptions.SaldoMenorException;
 
 public class MonederoTest {
   private Cuenta cuenta;
+  private Cuenta cuentaCargada;
   private Movimiento extraccion;
   private Movimiento deposito;
   
@@ -21,6 +22,7 @@ public class MonederoTest {
   @Before
   public void init() {
     cuenta = new Cuenta();
+    cuentaCargada = new Cuenta(1000);
     extraccion = new Extraccion(LocalDate.now(),1000);
     deposito = new Deposito(LocalDate.now(),1000);
   }
@@ -50,6 +52,12 @@ public class MonederoTest {
     cuenta.poner(1500);
     Assert.assertEquals(1500, cuenta.getSaldo(),0.01);
   }
+  
+  @Test
+  public void sacar() {
+	  cuentaCargada.sacar(500);
+	  Assert.assertEquals(500, cuentaCargada.getSaldo(),0.01);
+  }
 
   @Test(expected = MontoNegativoException.class)
   public void PonerMontoNegativo() {
@@ -62,6 +70,16 @@ public class MonederoTest {
     cuenta.poner(456);
     cuenta.poner(1900);
     Assert.assertEquals(3856, cuenta.getSaldo(),0.01);
+  }
+  
+  @Test
+  public void TresDepositosDosExtracciones() {
+    cuenta.poner(1500);
+    cuenta.sacar(400);
+    cuenta.poner(456);
+    cuenta.sacar(400);
+    cuenta.poner(1900);
+    Assert.assertEquals(3056, cuenta.getSaldo(),0.01);
   }
 
   @Test(expected = MaximaCantidadDepositosException.class)

@@ -18,6 +18,6 @@ public class Extraccion extends Movimiento {
 	}
 	
 	public boolean isDeposito() {
-		return true;
+		return false;
 	}
 }
