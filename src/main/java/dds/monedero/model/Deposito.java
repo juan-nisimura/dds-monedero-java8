@@ -8,10 +8,6 @@ public class Deposito extends Movimiento {
 		this.fecha = fecha;
 		this.monto = monto;
 	}
-	
-	public double calcularValor(Cuenta cuenta) {
-		return cuenta.getSaldo() + getMonto();
-	}
 
 	public boolean fueDepositado(LocalDate fecha) {
 		return esDeLaFecha(fecha);

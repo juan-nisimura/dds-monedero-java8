@@ -26,7 +26,5 @@ abstract public class Movimiento {
 		return this.fecha.equals(fecha);
 	}
 	
-	abstract public double calcularValor(Cuenta cuenta);
-	
 	abstract public boolean isDeposito();
 }
